@@ -16,7 +16,7 @@ Fork and clone this repository. You will be working in the provided three files:
 
 To complete this assignment, you'll need to complete the following steps...
 
-  1. Bootstrap your angular application (i.e., include the necessary scripts, set up `ng-app`)
+  1. Bootstrap your angular application (i.e., use `ng-app`)
   2. Setup a module and controller
   3. Attach a controller to your view
   4. Define a collection of superheroes in your controller. Each superhero should have a name, phone number, comics affiliation and image URL.
