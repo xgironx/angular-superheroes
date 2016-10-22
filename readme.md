@@ -8,7 +8,7 @@ What's the single worse feeling in the world? Answer: When disaster strikes, and
 
 That's why you're going to build a Superhero Phone Book!
 
-Your app will display a list of superheroes and their phone numbers in the browser.The user should be able to search that list and color-code the list by the hero's comics affiliation (e.g., DC, Marvel). You'll also want to add a button next to each superhero that, when clicked, causes the hero's image to be displayed on the page.
+Your app will display a list of superheroes and their phone numbers in the browser. The user should be able to search that list and color-code the list by the hero's comics affiliation (e.g., DC, Marvel). You'll also want to add a button next to each superhero that, when clicked, causes the hero's image to be displayed on the page.
 
 ## Getting Started
 
@@ -24,7 +24,7 @@ To complete this assignment, you'll need to complete the following steps...
   6. Create a search form. Use `ng-model` to bind that form's input to a value in the view model.
   7. Use `filter` to limit the number of superheroes shown in the browser based on user input
   8. Use `ng-class` to add a class to each superhero in the list indicating their comics affiliation (e.g., `ng-class="marvel"`). Use that class to color code the list depending on their affiliation (e.g., all Marvel heroes should appear as blue).
-  9. Add a button next to each superhero. When clicked, their image will appear at the top of the page. (image URLs are in the list) Angular Tutorial Step 10, NgClick Documentation
+  9. Add a button next to each superhero. When clicked, their image will appear at the top of the page.
 
 ## Resources
 
