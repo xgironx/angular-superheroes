@@ -1,12 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app='comicsContactsApp'>
 <head>
   <meta charset="UTF-8">
   <title>Superhero Phone Book</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
+<body ng-controller="comicsContactsController as vm">
+  <h2>Search Contacts</h2>
+  <input type="text" ng-model="searchSuperHeroes.names">
+  <hr/>
+
+  <div ng-repeat="superHero in vm.superheroes | filter: searchSuperHeroes.names" ng-class="{ 'imageColor' : superHero.affiliation === 'Image Comics', 'marvelColor' : superHero.affiliation === 'Marvel Comics' }">
+    <img ng-src='{{superHero.image}}' ng-show="viewImage"/>
+
+    <p>Superhero: {{superHero.name}}</p>
+    <button ng-click="viewImage = !viewImage">View Photo</button>
+
+    <p>Phone Number: {{superHero.phone}}</p>
+    <p>Affliation: {{superHero.affiliation}}</p>
+    <hr/>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js">
+  </script>
   <script src="app.js"></script>
 </body>
 </html>
