@@ -8,17 +8,17 @@
 
 <body ng-controller="comicsContactsController as vm">
   <h2>Search Contacts</h2>
-  <input type="text" ng-model="searchSuperHeroes.names">
+  <input type="text" ng-model="searchsuperheroes.names">
   <hr/>
 
-  <div ng-repeat="superHero in vm.superHeroes | filter: searchSuperHeroes.names" ng-class="{ 'imageColor' : superHero.affiliation === 'Image Comics', 'marvelColor' : superHero.affiliation === 'Marvel Comics' }">
-    <img ng-src='{{superHero.image}}' ng-show="viewImage"/>
+  <div ng-repeat="superhero in vm.superheroes | filter: searchsuperheroes.names" ng-class="{ 'imageColor' : superhero.affiliation === 'Image Comics', 'marvelColor' : superhero.affiliation === 'Marvel Comics' }">
+    <img ng-src='{{superhero.image}}' ng-show="vm.viewImage[$index]"/>
 
-    <p>Superhero: {{superHero.name}}</p>
-    <button ng-click="viewImage = !viewImage">View Photo</button>
+    <p>superhero: {{superhero.name}}</p>
+    <button ng-click="vm.viewImage[$index] = !vm.viewImage[$index]">View Photo</button>
 
-    <p>Phone Number: {{superHero.phone}}</p>
-    <p>Affliation: {{superHero.affiliation}}</p>
+    <p>Phone Number: {{superhero.phone}}</p>
+    <p>Affliation: {{superhero.affiliation}}</p>
     <hr/>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js">

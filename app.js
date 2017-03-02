@@ -1,4 +1,4 @@
-let superheroContacts= [
+let superheroContacts = [
   {
     name: "Black Panther",
     phone: "123-456-1234",
