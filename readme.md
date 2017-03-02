@@ -24,7 +24,7 @@ To complete this assignment, you'll need to complete the following steps:
   6. Create a search form. Use `ng-model` to bind that form's input to a value in the view model.
   7. Use `filter` to limit the number of superheroes shown in the browser based on user input
   8. Use `ng-class` to add a class to each superhero in the list indicating their comics affiliation (e.g., `ng-class="marvel"`). Use that class to color code the list depending on their affiliation (e.g., all Marvel heroes should appear as blue).
-  9. Add a button next to each superhero. When clicked, their image should appear within their listing (hint: use `ng-show`).
+  9. Add a button next to each superhero. When clicked, their image should appear within their listing (hint: use `$index`).
 
 ## Resources
 
@@ -32,6 +32,7 @@ To complete this assignment, you'll need to complete the following steps:
 * [ngClass Documentation](https://docs.angularjs.org/api/ng/directive/ngClass)
 * [Intro to Angular Lesson Plan](https://github.com/ga-wdi-lessons/angular-intro)
 * [AngularJS Tutorial](https://www.tutorialspoint.com/angularjs/)
+* [ngRepeat Documentation](https://docs.angularjs.org/api/ng/directive/ngRepeat)
 
 ## Bonus
 
