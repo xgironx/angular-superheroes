@@ -11,7 +11,7 @@
   <input type="text" ng-model="searchSuperHeroes.names">
   <hr/>
 
-  <div ng-repeat="superHero in vm.superheroes | filter: searchSuperHeroes.names" ng-class="{ 'imageColor' : superHero.affiliation === 'Image Comics', 'marvelColor' : superHero.affiliation === 'Marvel Comics' }">
+  <div ng-repeat="superHero in vm.superHeroes | filter: searchSuperHeroes.names" ng-class="{ 'imageColor' : superHero.affiliation === 'Image Comics', 'marvelColor' : superHero.affiliation === 'Marvel Comics' }">
     <img ng-src='{{superHero.image}}' ng-show="viewImage"/>
 
     <p>Superhero: {{superHero.name}}</p>
