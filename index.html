@@ -12,9 +12,9 @@
 
   <h1>Superheroes</h1>
   <div ng-repeat="hero in vm.heroes">
-    <!-- <p>{{hero.name}} - {{hero.phone}}</p> -->
-    <p class="ng-class: {{hero.affiliation}}">{{hero.name}} - {{hero.phone}}</p>
-    <!-- <p class="ng-class: $marvel? 'marvel' : 'dc'">{{hero.name}} - {{hero.phone}}</p> -->
+    <p class={{hero.affiliation}}> Name: {{hero.name}} - Phone: {{hero.phone}}
+      <button ng-click="vm.view[$index] = !vm.view[$index]"> View Image!</button></p>
+    <img class="image" ng-src='{{hero.image}}' ng-show="vm.view[$index]"/>
   </div>
   <hr />
 
@@ -22,7 +22,7 @@
   <h2>Search Heroes</h2>
     <input type="text" ng-model="searchText">
     <div ng-repeat="hero in vm.heroes | filter:searchText">
-        <p class="ng-class: {{hero.affiliation}}">{{hero.name}} - {{hero.phone}}</p>
+        <p class={{hero.affiliation}}>{{hero.name}} - {{hero.phone}}</p>
     </div>
   </div>
 

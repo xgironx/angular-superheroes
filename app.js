@@ -11,7 +11,7 @@ angular
   .module("heroesApp", [])
   .controller('heroesCtrl', [heroesController])
 
-function heroesController () {
+function heroesController (){
   this.heroes = superheroes
 
 }
