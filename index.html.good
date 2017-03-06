@@ -22,21 +22,16 @@ Add a button next to each superhero. When clicked, their image should appear wit
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body   ng-controller='superheroesCtrl     as     vm'>
+<body     ng-controller='superheroesCtrl     as     vm'>
   <div> Search: <input
-        type=        'text'
-        ng-model=    'search'
-        placeholder= 'search' />
+    type=        'text'
+    ng-model=    'search'
+    placeholder= 'search' />
   </div>
-  <div  ng-repeat= "superhero in vm.superheroes | filter: search"
-        ng-class=  "{ 'dc'    : superhero.comics_home === 'dc',
-                      'marvel': superhero.comics_home === 'marvel',
-                      'revell': superhero.comics_home === 'revell',
-                      'unk'   : superhero.comics_home === '' }"
-                      >
-                      <button type="submit" class="btn btn-primary" ng-click="search()"> {{ searchButtonText }} </button>
-                      superhero: {{$index + 1}}. {{superhero.name }} - {{superhero.phone}}
+  <div ng-repeat= "superhero in vm.superheroes | filter: search" ng-class="{'dc': superhero.comics_home === 'dc', 'marvel': superhero.comics_home === 'marvel', 'revell': superhero.comics_home === 'revell','unk': superhero.comics_home === '' }">
+    superhero: {{$index + 1}}. {{superhero.name }} - {{superhero.phone}}
   </div>
+
 
   <div> ################################################### </div>
   <div> <p> Add Name:    <input type='text' ng-model='vm.newSuperheroName'>      User Input: {{vm.newSuperheroName}} </p> </div>

@@ -1,0 +1,65 @@
+<!-- ############################
+                  201703050824   EL DOMINGO   JAY
+                                https://github.com/ga-wdi-lessons/angular-intro
+                                ng-app established the domain of the js functionality in the html element, the ng-controller establishes the domain in this div.-->
+<!-- Define a new controller attached to your app's module
+                                Attach a property to your controller called grumbles which is equal to all of your hard-coded data
+                                In the view, initialize an instance of your controller as the view model
+                                Use a directive to display all of the information for each grumble (title, name, content, photo url) -->
+<!--index.html -->
+<!DOCTYPE html>
+<html lang='en' ng-app='grumbleApp'>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Grumbles</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body ng-controller='grumblesCtrl     as     vm'>
+    <div>
+        <p> add: {{ 5 + 5 }} ... mult: {{ 5 * 5 }} </p>
+        <p> --------------------------------------------------------------------
+    </div>
+    <div>
+
+
+      <div><p> --------------------------------------------------------------------</div>
+        <label>Search: <input ng-model='search' placeholder="search" />  </label>
+        <!-- <label>Search: <input ng-model="searchText">                </label> -->
+      <table>
+        <tr></tr>
+        <tr><th>Title</th><th>Author</th></tr>
+        <tr ng-repeat="grumble in vm.grumbles | filter:searchText">
+          <td>{{grumble.title }}</td>   <td>{{grumble.author}}</td>
+        </tr>
+      </table>
+
+
+    <div ng-repeat="grumble in vm.grumbles | filter: searchText">            <!--MUST BE SINGLEQUOTES INSIDE OF DOUBLEQUOTES-->
+    <!-- <div ng-repeat="grumble in vm.grumbles | filter: {title: 'book1'}"> -->  <!--MUST BE SINGLEQUOTES INSIDE OF DOUBLEQUOTES-->
+    <!-- <div ng-repeat="grumble in vm.grumbles">  -->                           <!-- ng-repeat has domain over this <div>, nowhere else -->
+        <p> grumble: {{$index + 1}}. {{grumble.title }} - {{grumble.author}} </p>
+    </div>
+        <p> --------------------------------------------------------------------
+    </div>
+    <div>
+        <p> Add Title: <input type='text' ng-model='vm.newGrumbleTitle'> User Input: {{vm.newGrumbleTitle}} </p>
+    </div>
+    <div>
+        <p> Add Author: <input type='text' ng-model='vm.newGrumbleAuthor'> User Input: {{vm.newGrumbleAuthor}} </p>
+    </div>
+    <div>
+        <p> Add Content: <input type='text' ng-model='vm.newGrumbleContent'> User Input: {{vm.newGrumbleContent}} </p>
+    </div>
+    <div>
+        <p> Add Photo: <input type='text' ng-model='vm.newGrumblePhoto_url'> User Input: {{vm.newGrumblePhoto_url}} </p>
+    </div>
+    <div> <button ng-click='vm.addGrumble()'>Add Grumble</button>
+        <p> --------------------------------------------------------------------
+    </div>
+
+</body>
+
+</html>

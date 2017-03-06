@@ -1,0 +1,52 @@
+// ############################
+// 201703050824   EL DOMINGO   JAY
+// https://github.com/ga-wdi-lessons/angular-intro
+
+//app.js
+angular
+    .module("grumbleApp", [])
+    .controller("grumblesCtrl", [grumbleController])
+
+let grumbles = [{
+    title: 'book1',
+    author: 'author1',
+    content: 'content1',
+    photo_url: 'url1'
+}, {
+    title: 'book2',
+    author: 'author2',
+    content: 'content2',
+    photo_url: 'url2'
+}, {
+    title: 'book3',
+    author: 'author3',
+    content: 'content3',
+    photo_url: 'url3'
+}, {
+    title: 'book4',
+    author: 'author4',
+    content: 'content4',
+    photo_url: 'url4'
+}, {
+    title: 'book5',
+    author: 'author5',
+    content: 'content5',
+    photo_url: 'url5'
+}]
+
+function grumbleController() {
+    this.grumbles = grumbles
+    this.addGrumble = function() {
+        console.log('clicked!')
+    }
+    this.addGrumble = function() {
+                        alert('in addGrumble ' + this.newGrumbleTitle);
+                        let grumble = {
+                            title: this.newGrumbleTitle,
+                            author: this.newGrumbleAuthor,
+                            content: this.newGrumbleContent,
+                            photo_url: this.newGrumblePhoto_url
+                        }
+                        this.grumbles.push(grumble) //IT WORKS IT DID PUSH THE NEW BOOK ONTO THE grumbles ARRAY
+                    }
+}
