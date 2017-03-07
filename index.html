@@ -1,7 +1,7 @@
-<!-- ############################
-201703050824   EL DOMINGO   JAY
-https://github.com/ga-wdi-lessons/angular-intro
-ng-app established the domain of the js functionality in the html element, the ng-controller establishes the domain in this div.-->
+<!-- ############################-->
+<!-- 201703050824   EL DOMINGO   JAY
+https://github.com/ga-wdi-lessons/angular-intro -->
+<!--ng-app established the domain of the js functionality in the html element, the ng-controller establishes the domain in this div.-->
 <!-- Bootstrap your angular application (i.e., create a module, use ng-app).
 Create a controller.
 Attach a controller to your view.
@@ -28,13 +28,14 @@ Add a button next to each superhero. When clicked, their image should appear wit
 <body ng-controller='superheroesCtrl     as     vm'>
         <div> ################################################### </div>
         <div>
-            <p> Number o superheroes <input type='text' ng-model='vm.limitNumSuperheroes'> User Input: {{vm.newSuperheroName}} </p>
+            <p> Number o superheroes <input type='text' ng-model='vm.limitNumSuperheroes'> User Input: {{vm.limitNumSuperheroes}} </p>
         </div>
         <!-- <div  ng-repeat= "superhero in vm.superheroes"> -->
         <div>
             <p> Search Superhoes: <input type='text' ng-model='search' placeholder='search' /> </p>
         </div>
-        <div ng-repeat="superhero in vm.superheroes | filter: search | limitTo: vm.limitNumSuperheroes" ng-class='superhero.comics_home'>
+        <div  ng-repeat = 'superhero in vm.superheroes | filter: search | limitTo: vm.limitNumSuperheroes'
+              ng-class = 'superhero.comics_home'>
             <h3>{{superhero.name}} - {{superhero.phone}}
                 <button ng-click="vm.showImage[$index]=!vm.showImage[$index]">Show</button></h3>
             <img class='img' ng-src="{{superhero.image_url}}" ng-show="vm.showImage[$index]" />
