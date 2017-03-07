@@ -20,32 +20,32 @@ let superheroes = [{
     name: 'superhero1',
     phone: 'phone1',
     comics_home: 'marvel',
-    image_url: 'image_url1'
+    image_url: 'https://upload.wikimedia.org/wikipedia/en/0/0a/Aquaman_issue_1,_the_new_52.jpg'
 }, {
     name: 'superhero2',
     phone: 'phone2',
     comics_home: 'marvel',
-    image_url: 'image_url2'
+    image_url: 'http://static.boredpanda.com/blog/wp-content/uploads/2016/06/movie-superheroes-then-and-now-16-575173430481f__880.jpg'
 }, {
     name: 'superhero3',
     phone: 'phone3',
     comics_home: 'dc',
-    image_url: 'image_url3'
+    image_url: 'http://static.boredpanda.com/blog/wp-content/uploads/2016/06/movie-superheroes-then-and-now-26-57518e1660914__880.jpg'
 }, {
   name: 'superhero4',
   phone: 'phone4',
   comics_home: 'dc',
-  image_url: 'image_url4'
+  image_url: 'http://static.boredpanda.com/blog/wp-content/uploads/2016/06/movie-superheroes-then-and-now-22-57517946422b7__880.jpg'
 }, {
     name: 'superhero4',
     phone: 'phone4',
     comics_home: '',
-    image_url: 'image_url4'
+    image_url: 'http://static.boredpanda.com/blog/wp-content/uploads/2016/06/movie-superheroes-then-and-now-13-57518b9ec22bd__880.jpg'
 }, {
     name: 'superhero5',
     phone: 'phone5',
     comics_home: 'revell',
-    image_url: 'image_url5'
+    image_url: 'http://static.boredpanda.com/blog/wp-content/uploads/2016/06/movie-superheroes-then-and-now-1-5751507b9d1b5__880.jpg'
 }]
 
 function superheroController() {

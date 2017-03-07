@@ -1,12 +1,19 @@
 .dc {
   color: red;
-}
+  }
 .marvel {
   color: green;
-}
+  }
 .revell {
   color: blue;
-}
+  }
 .unk {
   color: gray;
+}
+.img {
+  width: 99px;
+  height: 99px;
+}
+.invisible {
+  visibility: hidden;
 }

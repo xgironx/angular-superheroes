@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="heroesApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Superhero Phone Book</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body ng-controller='heroesCtrl as vm'>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  <script src="app.js"></script>
+
+  <h1>Superheroes</h1>
+  <div ng-repeat="hero in vm.heroes">
+    <p class={{hero.affiliation}}> Name: {{hero.name}} - Phone: {{hero.phone}}
+      <button ng-click="vm.view[$index] = !vm.view[$index]"> View Image!</button></p>
+    <img class="image" ng-src='{{hero.image}}' ng-show="vm.view[$index]"/>
+  </div>
+  <hr />
+
+  <div>
+  <h2>Search Heroes</h2>
+    <input type="text" ng-model="searchText">
+    <div ng-repeat="hero in vm.heroes | filter:searchText">
+        <p class={{hero.affiliation}}>{{hero.name}} - {{hero.phone}}</p>
+    </div>
+  </div>
+
+
+</body>
+</html>

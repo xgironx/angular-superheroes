@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="superheroApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Superhero Phone Book</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  <script src="shin_app.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body ng-controller = "superheroCtrl as vm">
+  <h1>Superhero Listing</h1>
+  <label>Search: <input ng-model="searchText"></label>
+  <div ng-repeat="letter in vm.superheroAlphabet(searchText)">
+    <h2>{{letter}}</h2>
+    <div ng-repeat="superheros in vm.alphabetHeros(letter) | filter:searchText">
+      <div ng-class="superheros.affiliation" class="listing">
+        <h3>{{superheros.name}} - {{superheros.number}} <button ng-click="vm.showImage[letter][$index]=!vm.showImage[letter][$index]">Show</button></h3>
+        <img ng-src="{{superheros.image_url}}" ng-show="vm.showImage[letter][$index]"/>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
