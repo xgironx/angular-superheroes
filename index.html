@@ -16,47 +16,52 @@ Add a button next to each superhero. When clicked, their image should appear wit
 <html lang='en' ng-app='superheroApp'>
 
 <head>
-  <!-- Latest compiled and minified CSS --> <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
-  <!-- Optional theme --> <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> -->
-  <name>Angular Superheroes</name> <br>
-  <link rel="stylesheet" href="style.css">
+    <!-- Latest compiled and minified CSS -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <!-- Optional theme -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> -->
+    <name>Angular Superheroes</name> <br>
+    <link rel="stylesheet" href="style.css">
 </head>
-         ###################################################
-<body   ng-controller='superheroesCtrl     as     vm'>
-<<<<<<< HEAD
-  <div> Search: <input
-        type=        'text'
-        ng-model=    'search'
-        placeholder= 'search' />
-  </div>
-  <div> ################################################### </div>
-  <div> <p> Number o superheroes <input type='text' ng-model='vm.limitNumSuperheroes'> User Input: {{vm.newSuperheroName}} </p> </div>
-  <!-- <div  ng-repeat= "superhero in vm.superheroes"> -->
-=======
-  <div> <p> Search Superhoes: <input type=        'text' ng-model=    'search' placeholder= 'search' />  </p> </div>
-  <div> <p> Num o superheroes <input type='text' ng-model='vm.limitNumSuperheroes'> User Input: {{vm.limitNumSuperheroes}} </p> </div>
->>>>>>> d6b92ced164309930810317c0463558902219385
-  <div  ng-repeat= "superhero in vm.superheroes | filter: search"
-        ng-class = 'superhero.comics_home'>
-                      <h3>{{superhero.name}} - {{superhero.phone}}
-                        <button ng-click="vm.showImage[$index]=!vm.showImage[$index]">Show</button></h3>
-                          <img class ='img' ng-src="{{superhero.image_url}}" ng-show="vm.showImage[$index]"/>
-  </div>
+<!-- ################################################### -->
 
-  <div> ################################################### </div>
-  <div> <p> Add Name:    <input type='text' ng-model='vm.newSuperheroName'>      User Input: {{vm.newSuperheroName}} </p> </div>
-  <div> <p> Add phone:   <input type='text' ng-model='vm.newSuperheroPhone'>     User Input: {{vm.newSuperheroPhone}} </p> </div>
-  <div> <p> Add Content: <input type='text' ng-model='vm.newSuperheroComics_home'>   User Input: {{vm.newSuperheroContent}} </p> </div>
-  <div> <p> Add Photo:   <input type='text' ng-model='vm.newSuperheroImage_url'> User Input: {{vm.newSuperheroImage_url}} </p> </div>
-  <div> <button ng-click='vm.addSuperhero()'> Add Superhero </button> </div>
-  <div> ################################################### </div>
+<body ng-controller='superheroesCtrl     as     vm'>
+        <div> ################################################### </div>
+        <div>
+            <p> Number o superheroes <input type='text' ng-model='vm.limitNumSuperheroes'> User Input: {{vm.newSuperheroName}} </p>
+        </div>
+        <!-- <div  ng-repeat= "superhero in vm.superheroes"> -->
+        <div>
+            <p> Search Superhoes: <input type='text' ng-model='search' placeholder='search' /> </p>
+        </div>
+        <div ng-repeat="superhero in vm.superheroes | filter: search | limitTo: vm.limitNumSuperheroes" ng-class='superhero.comics_home'>
+            <h3>{{superhero.name}} - {{superhero.phone}}
+                <button ng-click="vm.showImage[$index]=!vm.showImage[$index]">Show</button></h3>
+            <img class='img' ng-src="{{superhero.image_url}}" ng-show="vm.showImage[$index]" />
+        </div>
+
+        <div> ################################################### </div>
+        <div>
+            <p> Add Name: <input type='text' ng-model='vm.newSuperheroName'> User Input: {{vm.newSuperheroName}} </p>
+        </div>
+        <div>
+            <p> Add phone: <input type='text' ng-model='vm.newSuperheroPhone'> User Input: {{vm.newSuperheroPhone}} </p>
+        </div>
+        <div>
+            <p> Add Content: <input type='text' ng-model='vm.newSuperheroComics_home'> User Input: {{vm.newSuperheroContent}} </p>
+        </div>
+        <div>
+            <p> Add Photo: <input type='text' ng-model='vm.newSuperheroImage_url'> User Input: {{vm.newSuperheroImage_url}} </p>
+        </div>
+        <div> <button ng-click='vm.addSuperhero()'> Add Superhero </button> </div>
+        <div> ################################################### </div>
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-    <script src="app.js"></script>
-    <!-- Latest compiled and minified JavaScript -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><meta charset="UTF-8"> -->
-    <!-- <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script> -->
-  </body>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+        <script src="app.js"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><meta charset="UTF-8"> -->
+        <!-- <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script> -->
+</body>
 
-  </html>
+</html>

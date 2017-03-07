@@ -53,7 +53,7 @@ angular
     }
     this.alphabetHeros = function(letter) {
       // return this.superheros.map(x=>x.name).filter(y=>y[0]==letter).sort()
-      return this.superheros.filter(x=>x.name[0]==letter).sort()
+      return this.superheros.filter(superhero => superhero.name[0]== letter).sort()
     }
 
 
