@@ -18,19 +18,13 @@ Add a button next to each superhero. When clicked, their image should appear wit
 <head>
   <!-- Latest compiled and minified CSS --> <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
   <!-- Optional theme --> <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> -->
-  <name>Angular Superheroes</name>
+  <name>Angular Superheroes</name> <br>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body   ng-controller='superheroesCtrl     as     vm'>
-  <div> Search: <input
-        type=        'text'
-        ng-model=    'search'
-        placeholder= 'search' />
-  </div>
-
-  <div> <p> Number o superheroes <input type='text' ng-model='vm.limitNumSuperheroes'> User Input: {{vm.newSuperheroName}} </p> </div>
-  <!-- <div  ng-repeat= "superhero in vm.superheroes"> -->
+  <div> <p> Search Superhoes: <input type=        'text' ng-model=    'search' placeholder= 'search' />  </p> </div>
+  <div> <p> Num o superheroes <input type='text' ng-model='vm.limitNumSuperheroes'> User Input: {{vm.limitNumSuperheroes}} </p> </div>
   <div  ng-repeat= "superhero in vm.superheroes | filter: search"
         ng-class = 'superhero.comics_home'>
                       <h3>{{superhero.name}} - {{superhero.phone}}
